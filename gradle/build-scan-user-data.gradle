@@ -142,25 +142,7 @@ void addCiMetadata() {
 }
 
 void addGitMetadata() {
-	buildScan.background {
-		def gitCommitId = versioning.info.commit
-		def gitBranchName = versioning.info.branch
-		def gitDirty = versioning.info.dirty
-
-		if (gitCommitId) {
-			def commitIdLabel = 'Git commit id'
-			value commitIdLabel, gitCommitId
-			addCustomValueSearchLink 'Git commit id build scans', [(commitIdLabel): gitCommitId]
-			link 'Github Source', "https://github.com/junit-team/junit5/tree/" + gitCommitId
-		}
-		if (gitBranchName) {
-			tag gitBranchName
-			value 'Git branch', gitBranchName
-		}
-		if (gitDirty) {
-			tag 'Dirty'
-		}
-	}
+	
 }
 
 void addTestParallelization() {
