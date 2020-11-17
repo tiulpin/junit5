@@ -1,0 +1,5 @@
+version: 1.0
+failThreshold: 0
+stopThreshold: 100
+profile:
+    name: qodana.recommended
