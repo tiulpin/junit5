@@ -3,3 +3,7 @@ failThreshold: 0
 stopThreshold: 100
 profile:
     name: qodana.recommended
+include:
+  - name: unused
+exclude:
+  - name: All
