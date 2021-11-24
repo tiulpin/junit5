@@ -8,6 +8,7 @@ plugins {
 	id("com.github.ben-manes.versions") // gradle dependencyUpdates
 	id("com.diffplug.gradle.spotless")
 	id("io.spring.nohttp")
+	id("org.sonarqube")
 }
 
 apply(from = "gradle/build-scan-user-data.gradle")
@@ -16,6 +17,14 @@ buildScan {
 	if (project.hasProperty("javaHome")) {
 		value("Custom Java home", project.property("javaHome") as String)
 	}
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "avafanasiev_junit5"
+    property "sonar.organization", "avafanasiev"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 val buildTimeAndDate by extra {
