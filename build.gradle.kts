@@ -21,9 +21,9 @@ buildScan {
 
 sonarqube {
   properties {
-    property "sonar.projectKey", "avafanasiev_junit5"
-    property "sonar.organization", "avafanasiev"
-    property "sonar.host.url", "https://sonarcloud.io"
+    property( "sonar.projectKey", "avafanasiev_junit5")
+    property( "sonar.organization", "avafanasiev")
+    property( "sonar.host.url", "https://sonarcloud.io")
   }
 }
 
