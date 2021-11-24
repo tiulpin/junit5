@@ -8,7 +8,7 @@ plugins {
 	id("com.github.ben-manes.versions") // gradle dependencyUpdates
 	id("com.diffplug.gradle.spotless")
 	id("io.spring.nohttp")
-	id("org.sonarqube")
+	id("org.sonarqube") version "3.3"
 }
 
 apply(from = "gradle/build-scan-user-data.gradle")
