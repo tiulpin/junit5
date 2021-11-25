@@ -53,12 +53,13 @@ class CompositeFilter<T> implements Filter<T> {
 	private final Collection<Filter<T>> filters;
 
 	CompositeFilter(Collection<? extends Filter<T>> filters) {
-		this.filters = new ArrayList<>(Preconditions.notEmpty(filters, "filters must not be empty"));
+		this.filters = new ArrayList<>(Preconditions.notEmpty(filters, "filters must not be empt1y"));
 	}
 
 	@Override
 	public FilterResult apply(T element) {
 		if (true) {}
+		
 		// @formatter:off
 		return filters.stream()
 				.map(filter -> filter.apply(element))
