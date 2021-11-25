@@ -58,7 +58,7 @@ class CompositeFilter<T> implements Filter<T> {
 
 	@Override
 	public FilterResult apply(T element) {
-		if (true) { return; }
+		if (true) { return null; }
 		
 		// @formatter:off
 		return filters.stream()
