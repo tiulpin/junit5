@@ -1,0 +1,94 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Class",
+  "type": "Class name same as ancestor name",
+  "tags": [
+    "JAVA"
+  ],
+  "severity": "High",
+  "comment": "Class name <code>PreconditionViolationException</code> is the same as one of its superclass' names",
+  "detailsInfo": "Reports classes that have the same name as one of their superclasses, while their fully qualified names remain different. Such class names may be very confusing.\n\n**Example:**\n\n\n      package util;\n      abstract class Iterable<T> implements java.lang.Iterable<T> {}\n\nA quick-fix that renames such classes is available only in the editor.",
+  "sources": [
+    {
+      "type": "class",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/PreconditionViolationException.java",
+      "language": "JAVA",
+      "line": 24,
+      "offset": 13,
+      "length": 30,
+      "code": {
+        "startLine": 22,
+        "length": 30,
+        "offset": 98,
+        "surroundingCode": "@API(status = STABLE, since = \"1.5\")\n@SuppressWarnings({ \"deprecation\", \"exports\" })\npublic class PreconditionViolationException extends org.junit.platform.commons.util.PreconditionViolationException {\n\n\tprivate static final long serialVersionUID = 1L;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "ClassNameSameAsAncestorName"
+  },
+  "hash": "-4837436544522069705"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Redundant semicolon",
+  "tags": [
+    "kotlin"
+  ],
+  "severity": "High",
+  "comment": "Redundant semicolon",
+  "detailsInfo": "Reports redundant semicolons (`;`) that can be safely removed.\n\n\nKotlin does not require a semicolon at the end of each statement or expression.\nA quick-fix is suggested to remove redundant semicolons.\n\n**Example:**\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2);\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")};\n\nAfter the quick-fix is applied:\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2)\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")}\n\nThere are two cases though where a semicolon is required:\n\n1. Several statements placed on a single line need to be separated with semicolons:\n\n\n         map.forEach { val (key, value) = it; println(\"$key -> $value\") }\n\n2. `enum` classes that also declare properties or functions, require a semicolon after the list of enum constants:\n\n\n         enum class Mode {\n             SILENT, VERBOSE;\n\n             fun isSilent(): Boolean = this == SILENT\n         }\n               \n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-runner/junit-platform-runner.gradle.kts",
+      "language": "kotlin",
+      "line": 1,
+      "offset": 44,
+      "length": 1,
+      "code": {
+        "startLine": 1,
+        "length": 1,
+        "offset": 44,
+        "surroundingCode": "import aQute.bnd.gradle.BundleTaskConvention;\n\nplugins {\n\t`java-library-conventions`\n\t`junit4-compatibility`"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-runner",
+    "inspectionName": "RedundantSemicolon"
+  },
+  "hash": "-1608846747498306045"
+},{
+  "tool": "Code Inspection",
+  "category": "Code style issues",
+  "type": "Unnecessary semicolon",
+  "tags": [
+    "JAVA"
+  ],
+  "severity": "High",
+  "comment": "Unnecessary semicolon <code>;</code>",
+  "detailsInfo": "Reports any unnecessary semicolons, including semicolons that are used between class members, inside block statements, or after class definitions.\n\nEven though these semicolons are valid in Java, they are redundant and may be removed.\n\nExample:\n\n\n      class C {\n        ;\n        void m() throws Exception {\n            try (AutoCloseable r1 = createAutoCloseable();) {\n              ;\n            }\n        }\n        ;\n      }\n\nAfter the quick-fix is applied:\n\n\n      class C {\n        void m() throws Exception {\n          try (AutoCloseable r1 = createAutoCloseable()) {\n          }\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "class",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/support/HierarchyTraversalMode.java",
+      "language": "JAVA",
+      "line": 36,
+      "offset": 10,
+      "length": 1,
+      "code": {
+        "startLine": 34,
+        "length": 1,
+        "offset": 69,
+        "surroundingCode": "\t * Traverse the hierarchy using bottom-up semantics.\n\t */\n\tBOTTOM_UP;\n\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "UnnecessarySemicolon"
+  },
+  "hash": "-1804215577527357935"
+}]}

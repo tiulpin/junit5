@@ -1,0 +1,65 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Val cannot be reassigned",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "documentation/documentation.gradle.kts",
+      "language": "kotlin",
+      "line": 280,
+      "offset": 2,
+      "length": 9,
+      "code": {
+        "startLine": 278,
+        "length": 9,
+        "offset": 90,
+        "surroundingCode": "\t\tclasspath = files(modularProjects.map { it.sourceSets.main.get().compileClasspath })\n\n\t\tmaxMemory = \"1024m\"\n\t\tdestinationDir = file(\"$buildDir/docs/javadoc\")\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.documentation",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "4732987377896410008"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "Val cannot be reassigned",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "documentation/documentation.gradle.kts",
+      "language": "kotlin",
+      "line": 281,
+      "offset": 2,
+      "length": 14,
+      "code": {
+        "startLine": 279,
+        "length": 14,
+        "offset": 25,
+        "surroundingCode": "\n\t\tmaxMemory = \"1024m\"\n\t\tdestinationDir = file(\"$buildDir/docs/javadoc\")\n\n\t\tdoFirst {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.documentation",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-5255551881595003580"
+}]}

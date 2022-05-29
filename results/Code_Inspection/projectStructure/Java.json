@@ -1,0 +1,272 @@
+{
+  "modules": [
+    {
+      "name": "junit5",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.dependencies",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.documentation",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-bom",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-api",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-engine",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-migrationsupport",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-params",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-commons",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-console",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-console-standalone",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-engine",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-launcher",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-reporting",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-runner",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-suite-api",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-testkit",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-vintage-engine",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.platform-tests",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.platform-tooling-support-tests",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.buildSrc",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.documentation.test",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.documentation.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-jupiter.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-jupiter-api.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-api.testFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-api.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-jupiter-engine.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-engine.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-jupiter-migrationsupport.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-migrationsupport.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-jupiter-params.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-jupiter-params.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-commons.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-commons.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-commons.mainRelease9",
+      "languageLevel": 9
+    },
+    {
+      "name": "junit5.junit-platform-console.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-console.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-console.mainRelease9",
+      "languageLevel": 9
+    },
+    {
+      "name": "junit5.junit-platform-console-standalone.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-console-standalone.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-engine.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-engine.testFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-engine.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-launcher.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-launcher.testFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-launcher.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-reporting.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-reporting.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-runner.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-runner.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-suite-api.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-suite-api.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-platform-testkit.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-platform-testkit.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.junit-vintage-engine.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-vintage-engine.testFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.junit-vintage-engine.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.platform-tests.jmh",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.platform-tests.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.platform-tests.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "junit5.platform-tooling-support-tests.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.platform-tooling-support-tests.main",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.buildSrc.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "junit5.buildSrc.main",
+      "languageLevel": 11
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "total": 118,
+  "tools inspection": {
+    "Code Inspection": 118
+  },
+  "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/avafanasiev/junit5",
+        "revisionId": "6daf59c3ab0c4d89c27dcac86c3c36842e51aba8",
+        "branch": "master"
+      }
+    },
+    "deviceId": "200820300000000-8ef8-32c1-c4c8-f6fc2847f8d5"
+  }
+}
