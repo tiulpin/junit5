@@ -87,34 +87,6 @@
   "category": "Abstraction issues",
   "type": "'Optional' used as field or parameter type",
   "severity": "High",
-  "comment": "'Optional used as type for parameter 'target''",
-  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/execution/ExecutableInvoker.java",
-      "language": "JAVA",
-      "line": 141,
-      "offset": 52,
-      "length": 16,
-      "code": {
-        "startLine": 139,
-        "length": 16,
-        "offset": 116,
-        "surroundingCode": "\t * invocation; never {@code null} though potentially empty\n\t */\n\tprivate Object[] resolveParameters(Method method, Optional<Object> target, ExtensionContext extensionContext,\n\t\t\tExtensionRegistry extensionRegistry) {\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-engine.main",
-    "inspectionName": "OptionalUsedAsFieldOrParameterType"
-  },
-  "hash": "9ebf732252261afebbaca63c6bc6581588886b64e8e8c171454f939d76d564de"
-},{
-  "tool": "Code Inspection",
-  "category": "Abstraction issues",
-  "type": "'Optional' used as field or parameter type",
-  "severity": "High",
   "comment": "'Optional used as type for parameter 'outerInstance''",
   "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
   "sources": [
@@ -138,6 +110,34 @@
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
   "hash": "26ff9825f9bc7ad880a78210dcf530a66e07a73cf71652dd16afa0a806679b26"
+},{
+  "tool": "Code Inspection",
+  "category": "Abstraction issues",
+  "type": "'Optional' used as field or parameter type",
+  "severity": "High",
+  "comment": "'Optional used as type for parameter 'target''",
+  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/execution/ExecutableInvoker.java",
+      "language": "JAVA",
+      "line": 141,
+      "offset": 52,
+      "length": 16,
+      "code": {
+        "startLine": 139,
+        "length": 16,
+        "offset": 116,
+        "surroundingCode": "\t * invocation; never {@code null} though potentially empty\n\t */\n\tprivate Object[] resolveParameters(Method method, Optional<Object> target, ExtensionContext extensionContext,\n\t\t\tExtensionRegistry extensionRegistry) {\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-engine.main",
+    "inspectionName": "OptionalUsedAsFieldOrParameterType"
+  },
+  "hash": "9ebf732252261afebbaca63c6bc6581588886b64e8e8c171454f939d76d564de"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -311,34 +311,6 @@
   "category": "Abstraction issues",
   "type": "'Optional' used as field or parameter type",
   "severity": "High",
-  "comment": "'Optional' used as type for field 'testMethod'",
-  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/extension/TestInfoParameterResolver.java",
-      "language": "JAVA",
-      "line": 46,
-      "offset": 17,
-      "length": 16,
-      "code": {
-        "startLine": 44,
-        "length": 16,
-        "offset": 96,
-        "surroundingCode": "\t\tprivate final Set<String> tags;\n\t\tprivate final Optional<Class<?>> testClass;\n\t\tprivate final Optional<Method> testMethod;\n\n\t\tDefaultTestInfo(ExtensionContext extensionContext) {"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-engine.main",
-    "inspectionName": "OptionalUsedAsFieldOrParameterType"
-  },
-  "hash": "ce450629c0429cacb2fa57a4f1c3cf39510079e066c351673b1932feafc96246"
-},{
-  "tool": "Code Inspection",
-  "category": "Abstraction issues",
-  "type": "'Optional' used as field or parameter type",
-  "severity": "High",
   "comment": "'Optional>' used as type for field 'testClass'",
   "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
   "sources": [
@@ -362,6 +334,34 @@
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
   "hash": "78f0621674ff18ea1624cb0ae69a68616065a132ecde6bc8a0a00f469be9d916"
+},{
+  "tool": "Code Inspection",
+  "category": "Abstraction issues",
+  "type": "'Optional' used as field or parameter type",
+  "severity": "High",
+  "comment": "'Optional' used as type for field 'testMethod'",
+  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/extension/TestInfoParameterResolver.java",
+      "language": "JAVA",
+      "line": 46,
+      "offset": 17,
+      "length": 16,
+      "code": {
+        "startLine": 44,
+        "length": 16,
+        "offset": 96,
+        "surroundingCode": "\t\tprivate final Set<String> tags;\n\t\tprivate final Optional<Class<?>> testClass;\n\t\tprivate final Optional<Method> testMethod;\n\n\t\tDefaultTestInfo(ExtensionContext extensionContext) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-engine.main",
+    "inspectionName": "OptionalUsedAsFieldOrParameterType"
+  },
+  "hash": "ce450629c0429cacb2fa57a4f1c3cf39510079e066c351673b1932feafc96246"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -451,6 +451,34 @@
   "category": "Abstraction issues",
   "type": "'Optional' used as field or parameter type",
   "severity": "High",
+  "comment": "'Optional' used as type for parameter 'outerInstances'",
+  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.java",
+      "language": "JAVA",
+      "line": 274,
+      "offset": 47,
+      "length": 23,
+      "code": {
+        "startLine": 272,
+        "length": 23,
+        "offset": 144,
+        "surroundingCode": "\t\t\tExtensionRegistry registry, ExtensionRegistrar registrar, ExtensionContext extensionContext);\n\n\tprotected TestInstances instantiateTestClass(Optional<TestInstances> outerInstances, ExtensionRegistry registry,\n\t\t\tExtensionContext extensionContext) {\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-engine.main",
+    "inspectionName": "OptionalUsedAsFieldOrParameterType"
+  },
+  "hash": "aa983f25fb76b4b5bcdb752296fb2922014d89482b2f9fa413985bb43b92e198"
+},{
+  "tool": "Code Inspection",
+  "category": "Abstraction issues",
+  "type": "'Optional' used as field or parameter type",
+  "severity": "High",
   "comment": "'Optional used as type for parameter 'outerInstance''",
   "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
   "sources": [
@@ -502,34 +530,6 @@
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
   "hash": "5ee63a4546c9fda6d75ec5dced680d399d6d680025ffa02fbed2b4b7e0a81828"
-},{
-  "tool": "Code Inspection",
-  "category": "Abstraction issues",
-  "type": "'Optional' used as field or parameter type",
-  "severity": "High",
-  "comment": "'Optional' used as type for parameter 'outerInstances'",
-  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/ClassBasedTestDescriptor.java",
-      "language": "JAVA",
-      "line": 274,
-      "offset": 47,
-      "length": 23,
-      "code": {
-        "startLine": 272,
-        "length": 23,
-        "offset": 144,
-        "surroundingCode": "\t\t\tExtensionRegistry registry, ExtensionRegistrar registrar, ExtensionContext extensionContext);\n\n\tprotected TestInstances instantiateTestClass(Optional<TestInstances> outerInstances, ExtensionRegistry registry,\n\t\t\tExtensionContext extensionContext) {\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-engine.main",
-    "inspectionName": "OptionalUsedAsFieldOrParameterType"
-  },
-  "hash": "aa983f25fb76b4b5bcdb752296fb2922014d89482b2f9fa413985bb43b92e198"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -682,14 +682,14 @@
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/AnnotationUtils.java",
       "language": "JAVA",
-      "line": 99,
-      "offset": 66,
+      "line": 74,
+      "offset": 36,
       "length": 36,
       "code": {
-        "startLine": 97,
+        "startLine": 72,
         "length": 36,
-        "offset": 164,
-        "surroundingCode": "\t * @see org.junit.platform.commons.support.AnnotationSupport#findAnnotation(Optional, Class)\n\t */\n\tpublic static <A extends Annotation> Optional<A> findAnnotation(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<A> annotationType) {\n"
+        "offset": 131,
+        "surroundingCode": "\t * @see org.junit.platform.commons.support.AnnotationSupport#isAnnotated(Optional, Class)\n\t */\n\tpublic static boolean isAnnotated(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<? extends Annotation> annotationType) {\n"
       }
     }
   ],
@@ -697,7 +697,7 @@
     "module": "junit5.junit-platform-commons.main",
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
-  "hash": "c9257d93970e880100910ca3b02d33aff256b6dc47417c3a28b7f38af5897307"
+  "hash": "a85fecca28bb67f8d89fd721b5b362e14d19e7deea023e3f00f51a038e4e4b75"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -738,14 +738,14 @@
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/AnnotationUtils.java",
       "language": "JAVA",
-      "line": 74,
-      "offset": 36,
+      "line": 99,
+      "offset": 66,
       "length": 36,
       "code": {
-        "startLine": 72,
+        "startLine": 97,
         "length": 36,
-        "offset": 131,
-        "surroundingCode": "\t * @see org.junit.platform.commons.support.AnnotationSupport#isAnnotated(Optional, Class)\n\t */\n\tpublic static boolean isAnnotated(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<? extends Annotation> annotationType) {\n"
+        "offset": 164,
+        "surroundingCode": "\t * @see org.junit.platform.commons.support.AnnotationSupport#findAnnotation(Optional, Class)\n\t */\n\tpublic static <A extends Annotation> Optional<A> findAnnotation(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<A> annotationType) {\n"
       }
     }
   ],
@@ -753,7 +753,35 @@
     "module": "junit5.junit-platform-commons.main",
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
-  "hash": "a85fecca28bb67f8d89fd721b5b362e14d19e7deea023e3f00f51a038e4e4b75"
+  "hash": "c9257d93970e880100910ca3b02d33aff256b6dc47417c3a28b7f38af5897307"
+},{
+  "tool": "Code Inspection",
+  "category": "Abstraction issues",
+  "type": "'Optional' used as field or parameter type",
+  "severity": "High",
+  "comment": "'Optional' used as type for parameter 'element'",
+  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/support/AnnotationSupport.java",
+      "language": "JAVA",
+      "line": 65,
+      "offset": 36,
+      "length": 36,
+      "code": {
+        "startLine": 63,
+        "length": 36,
+        "offset": 82,
+        "surroundingCode": "\t */\n\t@API(status = MAINTAINED, since = \"1.3\")\n\tpublic static boolean isAnnotated(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<? extends Annotation> annotationType) {\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "OptionalUsedAsFieldOrParameterType"
+  },
+  "hash": "592fa2903ea4242ef1895a9c5471f1bce543472dd38a75a4b08058677bf55c35"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -815,29 +843,29 @@
   "category": "Abstraction issues",
   "type": "'Optional' used as field or parameter type",
   "severity": "High",
-  "comment": "'Optional' used as type for parameter 'element'",
+  "comment": "'Optional' used as type for parameter 'customClassLoader'",
   "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
   "sources": [
     {
       "type": "file",
-      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/support/AnnotationSupport.java",
+      "path": "junit-platform-console/src/main/java/org/junit/platform/console/tasks/CustomContextClassLoaderExecutor.java",
       "language": "JAVA",
-      "line": 65,
-      "offset": 36,
-      "length": 36,
+      "line": 23,
+      "offset": 35,
+      "length": 21,
       "code": {
-        "startLine": 63,
-        "length": 36,
-        "offset": 82,
-        "surroundingCode": "\t */\n\t@API(status = MAINTAINED, since = \"1.3\")\n\tpublic static boolean isAnnotated(Optional<? extends AnnotatedElement> element,\n\t\t\tClass<? extends Annotation> annotationType) {\n"
+        "startLine": 21,
+        "length": 21,
+        "offset": 91,
+        "surroundingCode": "\tprivate final Optional<ClassLoader> customClassLoader;\n\n\tCustomContextClassLoaderExecutor(Optional<ClassLoader> customClassLoader) {\n\t\tthis.customClassLoader = customClassLoader;\n\t}"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.junit-platform-commons.main",
+    "module": "junit5.junit-platform-console.main",
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
-  "hash": "592fa2903ea4242ef1895a9c5471f1bce543472dd38a75a4b08058677bf55c35"
+  "hash": "bd7615dbb9c3330fc4353f547fff7fd3e888336a2e3ee2b921e2d380794a9d32"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -866,34 +894,6 @@
     "inspectionName": "OptionalUsedAsFieldOrParameterType"
   },
   "hash": "74a119b4bedad89d3741092fd5316d3a417021d4fc4bfc4d60917e0b4939f333"
-},{
-  "tool": "Code Inspection",
-  "category": "Abstraction issues",
-  "type": "'Optional' used as field or parameter type",
-  "severity": "High",
-  "comment": "'Optional' used as type for parameter 'customClassLoader'",
-  "detailsInfo": "Reports any cases in which `java.util.Optional<T>`, `java.util.OptionalDouble`, `java.util.OptionalInt`, `java.util.OptionalLong`, or `com.google.common.base.Optional` are used as types for fields or parameters.\n\n`Optional` was designed to provide a limited mechanism for library method return types in which a clear way to represent \"no result\"\nwas needed.\n\nUsing a field with the `java.util.Optional` type is also problematic if the class needs to be\n`Serializable`, as `java.util.Optional` is not serializable.\n\nExample:\n\n\n      class MyClass {\n        Optional<String> name; // Optional field\n\n        // Optional parameter\n        void setName(Optional<String> name) {\n          this.name = name;\n        }\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-platform-console/src/main/java/org/junit/platform/console/tasks/CustomContextClassLoaderExecutor.java",
-      "language": "JAVA",
-      "line": 23,
-      "offset": 35,
-      "length": 21,
-      "code": {
-        "startLine": 21,
-        "length": 21,
-        "offset": 91,
-        "surroundingCode": "\tprivate final Optional<ClassLoader> customClassLoader;\n\n\tCustomContextClassLoaderExecutor(Optional<ClassLoader> customClassLoader) {\n\t\tthis.customClassLoader = customClassLoader;\n\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-platform-console.main",
-    "inspectionName": "OptionalUsedAsFieldOrParameterType"
-  },
-  "hash": "bd7615dbb9c3330fc4353f547fff7fd3e888336a2e3ee2b921e2d380794a9d32"
 },{
   "tool": "Code Inspection",
   "category": "Abstraction issues",
@@ -1235,21 +1235,21 @@
   "category": "Code maturity",
   "type": "Deprecated member is still used",
   "severity": "High",
-  "comment": "Deprecated member 'readFieldValue' is still used",
+  "comment": "Deprecated member 'loadClass' is still used",
   "detailsInfo": "Reports deprecated classes, methods, and fields that are used in your code nonetheless.\n\nExample:\n\n\n      class MyCode {\n        @Deprecated\n        void oldMethod() {}// warning: \"Deprecated member is still used\"\n\n        void newMethod() {\n          oldMethod(); // forgotten usage\n        }\n      }\n\nUsages within deprecated elements are ignored.\n\n**NOTE:** Due to performance reasons, a non-private member is checked only when its name rarely occurs in the project.",
   "sources": [
     {
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
       "language": "JAVA",
-      "line": 537,
-      "offset": 37,
-      "length": 14,
+      "line": 701,
+      "offset": 35,
+      "length": 9,
       "code": {
-        "startLine": 535,
-        "length": 14,
-        "offset": 91,
-        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static <T> Optional<Object> readFieldValue(Class<T> clazz, String fieldName, T instance) {\n\t\treturn tryToReadFieldValue(clazz, fieldName, instance).toOptional();\n\t}"
+        "startLine": 699,
+        "length": 9,
+        "offset": 89,
+        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static Optional<Class<?>> loadClass(String name) {\n\t\treturn tryToLoadClass(name).toOptional();\n\t}"
       }
     }
   ],
@@ -1257,7 +1257,35 @@
     "module": "junit5.junit-platform-commons.main",
     "inspectionName": "DeprecatedIsStillUsed"
   },
-  "hash": "6e08cf19e100fa79f22ba53b101d3211a3f0e09d151f8d8687ff778ba370de50"
+  "hash": "2fd43729e472e0cad094fc82df08fb75c017926a4735356f32159edfd6695ca7"
+},{
+  "tool": "Code Inspection",
+  "category": "Code maturity",
+  "type": "Deprecated member is still used",
+  "severity": "High",
+  "comment": "Deprecated member 'readFieldValue' is still used",
+  "detailsInfo": "Reports deprecated classes, methods, and fields that are used in your code nonetheless.\n\nExample:\n\n\n      class MyCode {\n        @Deprecated\n        void oldMethod() {}// warning: \"Deprecated member is still used\"\n\n        void newMethod() {\n          oldMethod(); // forgotten usage\n        }\n      }\n\nUsages within deprecated elements are ignored.\n\n**NOTE:** Due to performance reasons, a non-private member is checked only when its name rarely occurs in the project.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
+      "language": "JAVA",
+      "line": 619,
+      "offset": 33,
+      "length": 14,
+      "code": {
+        "startLine": 617,
+        "length": 14,
+        "offset": 87,
+        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static Optional<Object> readFieldValue(Field field, Object instance) {\n\t\treturn tryToReadFieldValue(field, instance).toOptional();\n\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "DeprecatedIsStillUsed"
+  },
+  "hash": "5ebb58c51699bd974f170d3cbd2a699205e859699872b53c9d0a9f010d0b5bcb"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -1326,14 +1354,14 @@
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
       "language": "JAVA",
-      "line": 619,
-      "offset": 33,
+      "line": 537,
+      "offset": 37,
       "length": 14,
       "code": {
-        "startLine": 617,
+        "startLine": 535,
         "length": 14,
-        "offset": 87,
-        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static Optional<Object> readFieldValue(Field field, Object instance) {\n\t\treturn tryToReadFieldValue(field, instance).toOptional();\n\t}"
+        "offset": 91,
+        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static <T> Optional<Object> readFieldValue(Class<T> clazz, String fieldName, T instance) {\n\t\treturn tryToReadFieldValue(clazz, fieldName, instance).toOptional();\n\t}"
       }
     }
   ],
@@ -1341,35 +1369,7 @@
     "module": "junit5.junit-platform-commons.main",
     "inspectionName": "DeprecatedIsStillUsed"
   },
-  "hash": "5ebb58c51699bd974f170d3cbd2a699205e859699872b53c9d0a9f010d0b5bcb"
-},{
-  "tool": "Code Inspection",
-  "category": "Code maturity",
-  "type": "Deprecated member is still used",
-  "severity": "High",
-  "comment": "Deprecated member 'loadClass' is still used",
-  "detailsInfo": "Reports deprecated classes, methods, and fields that are used in your code nonetheless.\n\nExample:\n\n\n      class MyCode {\n        @Deprecated\n        void oldMethod() {}// warning: \"Deprecated member is still used\"\n\n        void newMethod() {\n          oldMethod(); // forgotten usage\n        }\n      }\n\nUsages within deprecated elements are ignored.\n\n**NOTE:** Due to performance reasons, a non-private member is checked only when its name rarely occurs in the project.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
-      "language": "JAVA",
-      "line": 701,
-      "offset": 35,
-      "length": 9,
-      "code": {
-        "startLine": 699,
-        "length": 9,
-        "offset": 89,
-        "surroundingCode": "\t@API(status = DEPRECATED, since = \"1.4\")\n\t@Deprecated\n\tpublic static Optional<Class<?>> loadClass(String name) {\n\t\treturn tryToLoadClass(name).toOptional();\n\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-platform-commons.main",
-    "inspectionName": "DeprecatedIsStillUsed"
-  },
-  "hash": "2fd43729e472e0cad094fc82df08fb75c017926a4735356f32159edfd6695ca7"
+  "hash": "6e08cf19e100fa79f22ba53b101d3211a3f0e09d151f8d8687ff778ba370de50"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -1494,11 +1494,11 @@
       "type": "file",
       "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
       "language": "JAVA",
-      "line": 236,
+      "line": 334,
       "offset": 16,
       "length": 2,
       "code": {
-        "startLine": 234,
+        "startLine": 332,
         "length": 2,
         "offset": 47,
         "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
@@ -1509,7 +1509,7 @@
     "module": "junit5.junit-jupiter-api.main",
     "inspectionName": "ArrayEquality"
   },
-  "hash": "f1606401522774519b40628990f240c3a1b24e30bc0501a987083f426e607a66"
+  "hash": "a85e73d9b831fedd3ab66002e6d1fc2c17b2f2efc310b126562f1784ab95f4eb"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -1522,11 +1522,11 @@
       "type": "file",
       "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
       "language": "JAVA",
-      "line": 188,
+      "line": 204,
       "offset": 16,
       "length": 2,
       "code": {
-        "startLine": 186,
+        "startLine": 202,
         "length": 2,
         "offset": 47,
         "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
@@ -1537,35 +1537,7 @@
     "module": "junit5.junit-jupiter-api.main",
     "inspectionName": "ArrayEquality"
   },
-  "hash": "ec9fbdf400ec12f427486f45c67dfd504ce68c42dd4a3cd40d5666c2fa28b042"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
-  "severity": "High",
-  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
-  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
-      "language": "JAVA",
-      "line": 318,
-      "offset": 16,
-      "length": 2,
-      "code": {
-        "startLine": 316,
-        "length": 2,
-        "offset": 58,
-        "surroundingCode": "\n\t\tAssertionUtils.assertValidDelta(delta);\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-api.main",
-    "inspectionName": "ArrayEquality"
-  },
-  "hash": "8fa604c797236f24fa50224d32f8e9210fd5467050e5c6782075aab6b48dcef8"
+  "hash": "da083b35ba449520b66a13cf560976a0933bc1affdebd30c15c5b38c731084ea"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -1594,62 +1566,6 @@
     "inspectionName": "ArrayEquality"
   },
   "hash": "15c384b27248b4cc784cf5f730a86ed01fbb3b18da7511b42d154b3e65f6a310"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
-  "severity": "High",
-  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
-  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
-      "language": "JAVA",
-      "line": 172,
-      "offset": 16,
-      "length": 2,
-      "code": {
-        "startLine": 170,
-        "length": 2,
-        "offset": 47,
-        "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-api.main",
-    "inspectionName": "ArrayEquality"
-  },
-  "hash": "8b3879e71acb57d94f4a618e0438856a66200fd3eaddbad9f1e465e4e61d0487"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
-  "severity": "High",
-  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
-  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
-      "language": "JAVA",
-      "line": 220,
-      "offset": 16,
-      "length": 2,
-      "code": {
-        "startLine": 218,
-        "length": 2,
-        "offset": 47,
-        "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-jupiter-api.main",
-    "inspectionName": "ArrayEquality"
-  },
-  "hash": "199655e5aa3a3dc740fb046b2df97ac29aa7a558a2d6015a2b30e80241063c73"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -1718,6 +1634,90 @@
       "type": "file",
       "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
       "language": "JAVA",
+      "line": 318,
+      "offset": 16,
+      "length": 2,
+      "code": {
+        "startLine": 316,
+        "length": 2,
+        "offset": 58,
+        "surroundingCode": "\n\t\tAssertionUtils.assertValidDelta(delta);\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-api.main",
+    "inspectionName": "ArrayEquality"
+  },
+  "hash": "8fa604c797236f24fa50224d32f8e9210fd5467050e5c6782075aab6b48dcef8"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
+  "severity": "High",
+  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
+  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
+      "language": "JAVA",
+      "line": 236,
+      "offset": 16,
+      "length": 2,
+      "code": {
+        "startLine": 234,
+        "length": 2,
+        "offset": 47,
+        "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-api.main",
+    "inspectionName": "ArrayEquality"
+  },
+  "hash": "f1606401522774519b40628990f240c3a1b24e30bc0501a987083f426e607a66"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
+  "severity": "High",
+  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
+  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
+      "language": "JAVA",
+      "line": 188,
+      "offset": 16,
+      "length": 2,
+      "code": {
+        "startLine": 186,
+        "length": 2,
+        "offset": 47,
+        "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-api.main",
+    "inspectionName": "ArrayEquality"
+  },
+  "hash": "ec9fbdf400ec12f427486f45c67dfd504ce68c42dd4a3cd40d5666c2fa28b042"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Array comparison using '==', instead of 'Arrays.equals()'",
+  "severity": "High",
+  "comment": "Array objects are compared using '==', not 'Arrays.equals()'",
+  "detailsInfo": "Reports operators `==` and `!=` used to test for array equality. In most cases, testing for the equality of array contents is intended, which can be done with the `java.util.Arrays.equals()` method.\n\n\nA quick-fix is suggested to replace `==` with `java.util.Arrays.equals()`.\n\n**Example:**\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = x == y;\n      }\n\nAfter the quick-fix is applied:\n\n\n      void foo(Object[] x, Object[] y) {\n        boolean comparison = Arrays.equals(x, y);\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
+      "language": "JAVA",
       "line": 252,
       "offset": 16,
       "length": 2,
@@ -1746,11 +1746,11 @@
       "type": "file",
       "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
       "language": "JAVA",
-      "line": 334,
+      "line": 220,
       "offset": 16,
       "length": 2,
       "code": {
-        "startLine": 332,
+        "startLine": 218,
         "length": 2,
         "offset": 47,
         "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
@@ -1761,7 +1761,7 @@
     "module": "junit5.junit-jupiter-api.main",
     "inspectionName": "ArrayEquality"
   },
-  "hash": "a85e73d9b831fedd3ab66002e6d1fc2c17b2f2efc310b126562f1784ab95f4eb"
+  "hash": "199655e5aa3a3dc740fb046b2df97ac29aa7a558a2d6015a2b30e80241063c73"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -1774,11 +1774,11 @@
       "type": "file",
       "path": "junit-jupiter-api/src/main/java/org/junit/jupiter/api/AssertArrayEquals.java",
       "language": "JAVA",
-      "line": 204,
+      "line": 172,
       "offset": 16,
       "length": 2,
       "code": {
-        "startLine": 202,
+        "startLine": 170,
         "length": 2,
         "offset": 47,
         "surroundingCode": "\t\t\tObject messageOrSupplier) {\n\n\t\tif (expected == actual) {\n\t\t\treturn;\n\t\t}"
@@ -1789,7 +1789,7 @@
     "module": "junit5.junit-jupiter-api.main",
     "inspectionName": "ArrayEquality"
   },
-  "hash": "da083b35ba449520b66a13cf560976a0933bc1affdebd30c15c5b38c731084ea"
+  "hash": "8b3879e71acb57d94f4a618e0438856a66200fd3eaddbad9f1e465e4e61d0487"
 },{
   "tool": "Code Inspection",
   "category": "Performance",
@@ -1858,34 +1858,6 @@
       "type": "file",
       "path": "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/TestExecutionListenerRegistry.java",
       "language": "JAVA",
-      "line": 122,
-      "offset": 42,
-      "length": 8,
-      "code": {
-        "startLine": 120,
-        "length": 8,
-        "offset": 198,
-        "surroundingCode": "\t\tpublic void testPlanExecutionFinished(TestPlan testPlan) {\n\t\t\tnotifyEach(testExecutionListeners, listener -> listener.testPlanExecutionFinished(testPlan),\n\t\t\t\t() -> \"testPlanExecutionFinished(\" + testPlan + \")\");\n\t\t}\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-platform-launcher.main",
-    "inspectionName": "ObjectToString"
-  },
-  "hash": "c59fa6d313474724e75e32fe3e1ca7380533e8c240c12c6f40bfc8744814b4bf"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Call to default 'toString()'",
-  "severity": "High",
-  "comment": "Call to default 'toString()' on 'testPlan'",
-  "detailsInfo": "Reports calls to `toString()` that use the default implementation from `java.lang.Object`.\n\nThe default implementation is rarely intended but may be used by accident.\n\n\nCalls to `toString()` on objects with `java.lang.Object`,\ninterface or abstract class type are ignored by this inspection.\n\n**Example:**\n\n\n      class Bar {\n          void foo1(Bar bar) {\n              String s = bar.toString(); // warning\n              /* ... */\n          }\n\n          void foo2(Object obj) {\n              String s = obj.toString(); // no warning here\n              /* ... */\n          }\n      }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/TestExecutionListenerRegistry.java",
-      "language": "JAVA",
       "line": 116,
       "offset": 41,
       "length": 8,
@@ -1902,6 +1874,34 @@
     "inspectionName": "ObjectToString"
   },
   "hash": "58ecf181aedf00c42e1c8513e9543d47c843cf05c32f500c73386e821453dffd"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Call to default 'toString()'",
+  "severity": "High",
+  "comment": "Call to default 'toString()' on 'testPlan'",
+  "detailsInfo": "Reports calls to `toString()` that use the default implementation from `java.lang.Object`.\n\nThe default implementation is rarely intended but may be used by accident.\n\n\nCalls to `toString()` on objects with `java.lang.Object`,\ninterface or abstract class type are ignored by this inspection.\n\n**Example:**\n\n\n      class Bar {\n          void foo1(Bar bar) {\n              String s = bar.toString(); // warning\n              /* ... */\n          }\n\n          void foo2(Object obj) {\n              String s = obj.toString(); // no warning here\n              /* ... */\n          }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/TestExecutionListenerRegistry.java",
+      "language": "JAVA",
+      "line": 122,
+      "offset": 42,
+      "length": 8,
+      "code": {
+        "startLine": 120,
+        "length": 8,
+        "offset": 198,
+        "surroundingCode": "\t\tpublic void testPlanExecutionFinished(TestPlan testPlan) {\n\t\t\tnotifyEach(testExecutionListeners, listener -> listener.testPlanExecutionFinished(testPlan),\n\t\t\t\t() -> \"testPlanExecutionFinished(\" + testPlan + \")\");\n\t\t}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-launcher.main",
+    "inspectionName": "ObjectToString"
+  },
+  "hash": "c59fa6d313474724e75e32fe3e1ca7380533e8c240c12c6f40bfc8744814b4bf"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -2110,62 +2110,6 @@
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
       "language": "JAVA",
-      "line": 691,
-      "offset": 10,
-      "length": 63,
-      "code": {
-        "startLine": 689,
-        "length": 63,
-        "offset": 37,
-        "surroundingCode": "\t\t}\n\t\tcatch (Throwable t) {\n\t\t\tthrow ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t));\n\t\t}\n\t}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-platform-commons.main",
-    "inspectionName": "ConstantConditions"
-  },
-  "hash": "7ff31e107ea154e21ca045dabaefab3259bc0c6d6087176ba1001cbdf80a3c94"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Constant conditions & exceptions",
-  "severity": "High",
-  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(t)' may produce 'NullPointerException'",
-  "detailsInfo": "Reports code constructs that always produce the same result, may throw exceptions, or violates nullability contracts.\n\nExamples:\n\n    if (array.length < index) {\n      System.out.println(array[index]);\n    } // Array index is always out of bounds\n\n    if (str == null) System.out.println(\"str is null\");\n    System.out.println(str.trim());\n    // the last statement may throw an NPE\n\n    @NotNull\n    Integer square(@Nullable Integer input) {\n        // the method contract is violated\n        return input == null ? null : input * input;\n    }\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Suggest @Nullable annotation for methods/fields/parameters where nullable values are used** option to warn when a nullable value is passed as an argument to a method with a non-annotated parameter, stored into non-annotated field, or returned from a non-annotated method. In this case, the inspection will suggest propagating the `@Nullable` annotation. You can also configure nullability annotations using the **Configure Annotations** button.\n* Use the **Treat non-annotated members and parameters as @Nullable** option to assume that non-annotated members can be null, so they must not be used in non-null context.\n* Use the **Report not-null required parameter with null-literal argument usages** option to report method parameters that cannot be null (e.g. immediately dereferenced in the method body), but there are call sites where a `null` literal is passed.\n* Use the **Report nullable methods that always return a non-null value** option to report methods that are annotated as `@Nullable`, but always return non-null value. In this case, it's suggested that you change the annotation to `@NotNull`.\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when reading a value guaranteed to be constant** option to add warnings on reading variables that contain some constant values, for example: `true`, `false`, or `null`.\n* Use the **Report problems that happen only on some code paths** option to control whether to report problems that may happen only on some code path. If this option is disabled, warnings like *exception is possible* will not be reported. The inspection will report only warnings like *exception will definitely occur*. This mode may greatly reduce the number of false-positives, especially if the code is not consistently annotated with nullability and contract annotations. That is why it can be useful for finding the most important problems in legacy code bases.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
-      "language": "JAVA",
-      "line": 935,
-      "offset": 13,
-      "length": 43,
-      "code": {
-        "startLine": 933,
-        "length": 43,
-        "offset": 46,
-        "surroundingCode": "\t\t\t\t\t}\n\t\t\t\t\tcatch (Throwable t) {\n\t\t\t\t\t\tthrow ExceptionUtils.throwAsUncheckedException(t);\n\t\t\t\t\t}\n\t\t\t\t});"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-platform-commons.main",
-    "inspectionName": "ConstantConditions"
-  },
-  "hash": "f34e699055815c25bfb355c51ff3485256676dc35e036c1377136e5ccbdbd279"
-},{
-  "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Constant conditions & exceptions",
-  "severity": "High",
-  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t))' may produce 'NullPointerException'",
-  "detailsInfo": "Reports code constructs that always produce the same result, may throw exceptions, or violates nullability contracts.\n\nExamples:\n\n    if (array.length < index) {\n      System.out.println(array[index]);\n    } // Array index is always out of bounds\n\n    if (str == null) System.out.println(\"str is null\");\n    System.out.println(str.trim());\n    // the last statement may throw an NPE\n\n    @NotNull\n    Integer square(@Nullable Integer input) {\n        // the method contract is violated\n        return input == null ? null : input * input;\n    }\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Suggest @Nullable annotation for methods/fields/parameters where nullable values are used** option to warn when a nullable value is passed as an argument to a method with a non-annotated parameter, stored into non-annotated field, or returned from a non-annotated method. In this case, the inspection will suggest propagating the `@Nullable` annotation. You can also configure nullability annotations using the **Configure Annotations** button.\n* Use the **Treat non-annotated members and parameters as @Nullable** option to assume that non-annotated members can be null, so they must not be used in non-null context.\n* Use the **Report not-null required parameter with null-literal argument usages** option to report method parameters that cannot be null (e.g. immediately dereferenced in the method body), but there are call sites where a `null` literal is passed.\n* Use the **Report nullable methods that always return a non-null value** option to report methods that are annotated as `@Nullable`, but always return non-null value. In this case, it's suggested that you change the annotation to `@NotNull`.\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when reading a value guaranteed to be constant** option to add warnings on reading variables that contain some constant values, for example: `true`, `false`, or `null`.\n* Use the **Report problems that happen only on some code paths** option to control whether to report problems that may happen only on some code path. If this option is disabled, warnings like *exception is possible* will not be reported. The inspection will report only warnings like *exception will definitely occur*. This mode may greatly reduce the number of false-positives, especially if the code is not consistently annotated with nullability and contract annotations. That is why it can be useful for finding the most important problems in legacy code bases.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
-      "language": "JAVA",
       "line": 491,
       "offset": 10,
       "length": 63,
@@ -2182,6 +2126,62 @@
     "inspectionName": "ConstantConditions"
   },
   "hash": "6ecd8a855d2499122add9058d1d37628c7992f702472ad4914e81c3b802ea8f8"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Constant conditions & exceptions",
+  "severity": "High",
+  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t))' may produce 'NullPointerException'",
+  "detailsInfo": "Reports code constructs that always produce the same result, may throw exceptions, or violates nullability contracts.\n\nExamples:\n\n    if (array.length < index) {\n      System.out.println(array[index]);\n    } // Array index is always out of bounds\n\n    if (str == null) System.out.println(\"str is null\");\n    System.out.println(str.trim());\n    // the last statement may throw an NPE\n\n    @NotNull\n    Integer square(@Nullable Integer input) {\n        // the method contract is violated\n        return input == null ? null : input * input;\n    }\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Suggest @Nullable annotation for methods/fields/parameters where nullable values are used** option to warn when a nullable value is passed as an argument to a method with a non-annotated parameter, stored into non-annotated field, or returned from a non-annotated method. In this case, the inspection will suggest propagating the `@Nullable` annotation. You can also configure nullability annotations using the **Configure Annotations** button.\n* Use the **Treat non-annotated members and parameters as @Nullable** option to assume that non-annotated members can be null, so they must not be used in non-null context.\n* Use the **Report not-null required parameter with null-literal argument usages** option to report method parameters that cannot be null (e.g. immediately dereferenced in the method body), but there are call sites where a `null` literal is passed.\n* Use the **Report nullable methods that always return a non-null value** option to report methods that are annotated as `@Nullable`, but always return non-null value. In this case, it's suggested that you change the annotation to `@NotNull`.\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when reading a value guaranteed to be constant** option to add warnings on reading variables that contain some constant values, for example: `true`, `false`, or `null`.\n* Use the **Report problems that happen only on some code paths** option to control whether to report problems that may happen only on some code path. If this option is disabled, warnings like *exception is possible* will not be reported. The inspection will report only warnings like *exception will definitely occur*. This mode may greatly reduce the number of false-positives, especially if the code is not consistently annotated with nullability and contract annotations. That is why it can be useful for finding the most important problems in legacy code bases.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
+      "language": "JAVA",
+      "line": 1105,
+      "offset": 10,
+      "length": 63,
+      "code": {
+        "startLine": 1103,
+        "length": 63,
+        "offset": 37,
+        "surroundingCode": "\t\t}\n\t\tcatch (Throwable t) {\n\t\t\tthrow ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t));\n\t\t}\n\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "ConstantConditions"
+  },
+  "hash": "72ced607eacf2ec6b0a255db125ba3e29a5c2f1156f39ada8ca6129c926c3297"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Constant conditions & exceptions",
+  "severity": "High",
+  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t))' may produce 'NullPointerException'",
+  "detailsInfo": "Reports code constructs that always produce the same result, may throw exceptions, or violates nullability contracts.\n\nExamples:\n\n    if (array.length < index) {\n      System.out.println(array[index]);\n    } // Array index is always out of bounds\n\n    if (str == null) System.out.println(\"str is null\");\n    System.out.println(str.trim());\n    // the last statement may throw an NPE\n\n    @NotNull\n    Integer square(@Nullable Integer input) {\n        // the method contract is violated\n        return input == null ? null : input * input;\n    }\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Suggest @Nullable annotation for methods/fields/parameters where nullable values are used** option to warn when a nullable value is passed as an argument to a method with a non-annotated parameter, stored into non-annotated field, or returned from a non-annotated method. In this case, the inspection will suggest propagating the `@Nullable` annotation. You can also configure nullability annotations using the **Configure Annotations** button.\n* Use the **Treat non-annotated members and parameters as @Nullable** option to assume that non-annotated members can be null, so they must not be used in non-null context.\n* Use the **Report not-null required parameter with null-literal argument usages** option to report method parameters that cannot be null (e.g. immediately dereferenced in the method body), but there are call sites where a `null` literal is passed.\n* Use the **Report nullable methods that always return a non-null value** option to report methods that are annotated as `@Nullable`, but always return non-null value. In this case, it's suggested that you change the annotation to `@NotNull`.\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when reading a value guaranteed to be constant** option to add warnings on reading variables that contain some constant values, for example: `true`, `false`, or `null`.\n* Use the **Report problems that happen only on some code paths** option to control whether to report problems that may happen only on some code path. If this option is disabled, warnings like *exception is possible* will not be reported. The inspection will report only warnings like *exception will definitely occur*. This mode may greatly reduce the number of false-positives, especially if the code is not consistently annotated with nullability and contract annotations. That is why it can be useful for finding the most important problems in legacy code bases.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
+      "language": "JAVA",
+      "line": 691,
+      "offset": 10,
+      "length": 63,
+      "code": {
+        "startLine": 689,
+        "length": 63,
+        "offset": 37,
+        "surroundingCode": "\t\t}\n\t\tcatch (Throwable t) {\n\t\t\tthrow ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t));\n\t\t}\n\t}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "ConstantConditions"
+  },
+  "hash": "7ff31e107ea154e21ca045dabaefab3259bc0c6d6087176ba1001cbdf80a3c94"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
@@ -2215,21 +2215,21 @@
   "category": "Probable bugs",
   "type": "Constant conditions & exceptions",
   "severity": "High",
-  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t))' may produce 'NullPointerException'",
+  "comment": "Dereference of 'ExceptionUtils.throwAsUncheckedException(t)' may produce 'NullPointerException'",
   "detailsInfo": "Reports code constructs that always produce the same result, may throw exceptions, or violates nullability contracts.\n\nExamples:\n\n    if (array.length < index) {\n      System.out.println(array[index]);\n    } // Array index is always out of bounds\n\n    if (str == null) System.out.println(\"str is null\");\n    System.out.println(str.trim());\n    // the last statement may throw an NPE\n\n    @NotNull\n    Integer square(@Nullable Integer input) {\n        // the method contract is violated\n        return input == null ? null : input * input;\n    }\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Suggest @Nullable annotation for methods/fields/parameters where nullable values are used** option to warn when a nullable value is passed as an argument to a method with a non-annotated parameter, stored into non-annotated field, or returned from a non-annotated method. In this case, the inspection will suggest propagating the `@Nullable` annotation. You can also configure nullability annotations using the **Configure Annotations** button.\n* Use the **Treat non-annotated members and parameters as @Nullable** option to assume that non-annotated members can be null, so they must not be used in non-null context.\n* Use the **Report not-null required parameter with null-literal argument usages** option to report method parameters that cannot be null (e.g. immediately dereferenced in the method body), but there are call sites where a `null` literal is passed.\n* Use the **Report nullable methods that always return a non-null value** option to report methods that are annotated as `@Nullable`, but always return non-null value. In this case, it's suggested that you change the annotation to `@NotNull`.\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when reading a value guaranteed to be constant** option to add warnings on reading variables that contain some constant values, for example: `true`, `false`, or `null`.\n* Use the **Report problems that happen only on some code paths** option to control whether to report problems that may happen only on some code path. If this option is disabled, warnings like *exception is possible* will not be reported. The inspection will report only warnings like *exception will definitely occur*. This mode may greatly reduce the number of false-positives, especially if the code is not consistently annotated with nullability and contract annotations. That is why it can be useful for finding the most important problems in legacy code bases.",
   "sources": [
     {
       "type": "file",
       "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/util/ReflectionUtils.java",
       "language": "JAVA",
-      "line": 1105,
-      "offset": 10,
-      "length": 63,
+      "line": 935,
+      "offset": 13,
+      "length": 43,
       "code": {
-        "startLine": 1103,
-        "length": 63,
-        "offset": 37,
-        "surroundingCode": "\t\t}\n\t\tcatch (Throwable t) {\n\t\t\tthrow ExceptionUtils.throwAsUncheckedException(getUnderlyingCause(t));\n\t\t}\n\t}"
+        "startLine": 933,
+        "length": 43,
+        "offset": 46,
+        "surroundingCode": "\t\t\t\t\t}\n\t\t\t\t\tcatch (Throwable t) {\n\t\t\t\t\t\tthrow ExceptionUtils.throwAsUncheckedException(t);\n\t\t\t\t\t}\n\t\t\t\t});"
       }
     }
   ],
@@ -2237,7 +2237,7 @@
     "module": "junit5.junit-platform-commons.main",
     "inspectionName": "ConstantConditions"
   },
-  "hash": "72ced607eacf2ec6b0a255db125ba3e29a5c2f1156f39ada8ca6129c926c3297"
+  "hash": "f34e699055815c25bfb355c51ff3485256676dc35e036c1377136e5ccbdbd279"
 },{
   "tool": "Code Inspection",
   "category": "Probable bugs",
