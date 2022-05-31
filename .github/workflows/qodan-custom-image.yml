@@ -1,4 +1,4 @@
-name: QodanaJob
+name: QodanaCustomImageJob
 on:
   workflow_dispatch:
   pull_request:
