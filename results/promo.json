@@ -1,5 +1,36 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Redundant semicolon",
+  "tags": [
+    "kotlin"
+  ],
+  "severity": "High",
+  "comment": "Redundant semicolon",
+  "detailsInfo": "Reports redundant semicolons (`;`) that can be safely removed.\n\n\nKotlin does not require a semicolon at the end of each statement or expression.\nA quick-fix is suggested to remove redundant semicolons.\n\n**Example:**\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2);\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")};\n\nAfter the quick-fix is applied:\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2)\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")}\n\nThere are two cases though where a semicolon is required:\n\n1. Several statements placed on a single line need to be separated with semicolons:\n\n\n         map.forEach { val (key, value) = it; println(\"$key -> $value\") }\n\n2. `enum` classes that also declare properties or functions, require a semicolon after the list of enum constants:\n\n\n         enum class Mode {\n             SILENT, VERBOSE;\n\n             fun isSilent(): Boolean = this == SILENT\n         }\n               \n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-vintage-engine/junit-vintage-engine.gradle.kts",
+      "language": "kotlin",
+      "line": 1,
+      "offset": 44,
+      "length": 1,
+      "code": {
+        "startLine": 1,
+        "length": 1,
+        "offset": 44,
+        "surroundingCode": "import aQute.bnd.gradle.BundleTaskConvention;\n\nplugins {\n\t`java-library-conventions`\n\t`junit4-compatibility`"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-vintage-engine",
+    "inspectionName": "RedundantSemicolon"
+  },
+  "hash": "3309131812609009199"
+},{
+  "tool": "Code Inspection",
   "category": "Code maturity",
   "type": "Use of 'System.out' or 'System.err'",
   "tags": [
@@ -11,24 +42,24 @@
   "sources": [
     {
       "type": "method",
-      "path": "platform-tooling-support-tests/src/main/java/platform/tooling/support/Request.java",
+      "path": "junit-platform-console/src/main/java/org/junit/platform/console/ConsoleLauncher.java",
       "language": "JAVA",
-      "line": 114,
-      "offset": 3,
+      "line": 37,
+      "offset": 25,
       "length": 10,
       "code": {
-        "startLine": 112,
+        "startLine": 35,
         "length": 10,
-        "offset": 53,
-        "surroundingCode": "\n\t\t\tvar result = tool.run(configuration.build());\n\t\t\tSystem.out.println(result.getOutput(\"out\"));\n\t\t\tSystem.err.println(result.getOutput(\"err\"));\n\t\t\treturn result;"
+        "offset": 69,
+        "surroundingCode": "\n\tpublic static void main(String... args) {\n\t\tint exitCode = execute(System.out, System.err, args).getExitCode();\n\t\tSystem.exit(exitCode);\n\t}"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.platform-tooling-support-tests.main",
+    "module": "junit5.junit-platform-console.main",
     "inspectionName": "SystemOutErr"
   },
-  "hash": "-6657401223152315743"
+  "hash": "-2483864343711134851"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
@@ -42,53 +73,22 @@
   "sources": [
     {
       "type": "method",
-      "path": "platform-tooling-support-tests/src/main/java/platform/tooling/support/Request.java",
+      "path": "junit-platform-console/src/main/java/org/junit/platform/console/ConsoleLauncher.java",
       "language": "JAVA",
-      "line": 115,
-      "offset": 3,
+      "line": 37,
+      "offset": 37,
       "length": 10,
       "code": {
-        "startLine": 113,
+        "startLine": 35,
         "length": 10,
-        "offset": 100,
-        "surroundingCode": "\t\t\tvar result = tool.run(configuration.build());\n\t\t\tSystem.out.println(result.getOutput(\"out\"));\n\t\t\tSystem.err.println(result.getOutput(\"err\"));\n\t\t\treturn result;\n\t\t}"
+        "offset": 81,
+        "surroundingCode": "\n\tpublic static void main(String... args) {\n\t\tint exitCode = execute(System.out, System.err, args).getExitCode();\n\t\tSystem.exit(exitCode);\n\t}"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.platform-tooling-support-tests.main",
+    "module": "junit5.junit-platform-console.main",
     "inspectionName": "SystemOutErr"
   },
-  "hash": "2994699096558401070"
-},{
-  "tool": "Code Inspection",
-  "category": "JUnit",
-  "type": "Test class with no tests",
-  "tags": [
-    "JAVA"
-  ],
-  "severity": "High",
-  "comment": "Test class <code>JUnit4SuiteWithExceptionThrowingRunner</code> has no tests",
-  "detailsInfo": "Reports non-`abstract` test cases without any test methods.\n\nSuch test cases usually indicate unfinished code\nor could be a refactoring leftover that should be removed.\n\nExample:\n\n\n      public class CrucialTest {\n        @Before\n        public void setUp() {\n          System.out.println(\"setting up\");\n        }\n      }\n\nUse the **Ignore test cases which have superclasses with test methods** option to ignore test cases which have super classes\nwith test methods.",
-  "sources": [
-    {
-      "type": "class",
-      "path": "junit-vintage-engine/src/testFixtures/java/org/junit/vintage/engine/samples/junit4/JUnit4SuiteWithExceptionThrowingRunner.java",
-      "language": "JAVA",
-      "line": 21,
-      "offset": 13,
-      "length": 38,
-      "code": {
-        "startLine": 19,
-        "length": 38,
-        "offset": 68,
-        "surroundingCode": "@RunWith(ExceptionThrowingRunner.class)\n@ChildCount(1)\npublic class JUnit4SuiteWithExceptionThrowingRunner {\n}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "junit5.junit-vintage-engine.testFixtures",
-    "inspectionName": "TestCaseWithNoTestMethods"
-  },
-  "hash": "5936377284167602669"
+  "hash": "7151884570049400962"
 }]}
