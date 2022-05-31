@@ -22,4 +22,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ runner.temp }}/qodana/results/report
           destination_dir: ./
+      - name: 'Upload artifacts'
+        uses: actions/upload-artifact@v3
+        with:
+          name: results
+          path: ${{ runner.temp }}/qodana/results/
+
 
