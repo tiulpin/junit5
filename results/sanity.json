@@ -3,7 +3,6 @@
   "category": "General",
   "type": "Kotlin annotator",
   "tags": [
-    "kotlin",
     "Sanity"
   ],
   "severity": "Critical",
@@ -15,7 +14,7 @@
       "path": "documentation/documentation.gradle.kts",
       "language": "kotlin",
       "line": 280,
-      "offset": 2,
+      "offset": 3,
       "length": 9,
       "code": {
         "startLine": 278,
@@ -29,13 +28,12 @@
     "module": "junit5.documentation",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "4732987377896410008"
+  "hash": "eb734a4187bd4607163ccc85df936eb930da0815fd9a7a4ffdb6a4cbc8f04927"
 },{
   "tool": "Code Inspection",
   "category": "General",
   "type": "Kotlin annotator",
   "tags": [
-    "kotlin",
     "Sanity"
   ],
   "severity": "Critical",
@@ -47,7 +45,7 @@
       "path": "documentation/documentation.gradle.kts",
       "language": "kotlin",
       "line": 281,
-      "offset": 2,
+      "offset": 3,
       "length": 14,
       "code": {
         "startLine": 279,
@@ -61,5 +59,5 @@
     "module": "junit5.documentation",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "-5255551881595003580"
+  "hash": "4d41418308f7fc001677afac6ffa45d6ddb201f4dd08bcfd6e3b94a114d01eda"
 }]}

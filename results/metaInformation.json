@@ -6,11 +6,11 @@
   "attributes": {
     "vcs": {
       "sarifIdea": {
-        "repositoryUri": "https://github.com/avafanasiev/junit5",
-        "revisionId": "0a219cac8e599152fb7ab82b02bebd9ffac4b6f7",
+        "repositoryUri": "https://github.com/tiulpin/junit5",
+        "revisionId": "383179554bd74a4c8b514e813eb4374cc105a80b",
         "branch": "master"
       }
     },
-    "deviceId": "200820300000000-8ef8-32c1-c4c8-f6fc2847f8d5"
+    "deviceId": "200820300000000-0000-0000-0000-000000000001"
   }
 }

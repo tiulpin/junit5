@@ -1,94 +1,169 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Redundant semicolon",
-  "tags": [
-    "kotlin"
-  ],
+  "category": "Code maturity",
+  "type": "Use of 'System.out' or 'System.err'",
   "severity": "High",
-  "comment": "Redundant semicolon",
-  "detailsInfo": "Reports redundant semicolons (`;`) that can be safely removed.\n\n\nKotlin does not require a semicolon at the end of each statement or expression.\nA quick-fix is suggested to remove redundant semicolons.\n\n**Example:**\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2);\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")};\n\nAfter the quick-fix is applied:\n\n\n      val myMap = mapOf(\"one\" to 1, \"two\" to 2)\n      myMap.forEach { (key, value) ->  print(\"$key -> $value\")}\n\nThere are two cases though where a semicolon is required:\n\n1. Several statements placed on a single line need to be separated with semicolons:\n\n\n         map.forEach { val (key, value) = it; println(\"$key -> $value\") }\n\n2. `enum` classes that also declare properties or functions, require a semicolon after the list of enum constants:\n\n\n         enum class Mode {\n             SILENT, VERBOSE;\n\n             fun isSilent(): Boolean = this == SILENT\n         }\n               \n",
+  "comment": "Uses of 'System.out' should probably be replaced with more robust logging",
+  "detailsInfo": "Reports usages of `System.out` or `System.err`.\n\nSuch statements are often used for temporary debugging and should be either removed from the production code, or replaced by a more robust\nlogging facility.",
   "sources": [
     {
       "type": "file",
-      "path": "junit-vintage-engine/junit-vintage-engine.gradle.kts",
-      "language": "kotlin",
-      "line": 1,
-      "offset": 44,
-      "length": 1,
+      "path": "platform-tooling-support-tests/src/main/java/platform/tooling/support/Request.java",
+      "language": "JAVA",
+      "line": 114,
+      "offset": 4,
+      "length": 10,
       "code": {
-        "startLine": 1,
-        "length": 1,
-        "offset": 44,
-        "surroundingCode": "import aQute.bnd.gradle.BundleTaskConvention;\n\nplugins {\n\t`java-library-conventions`\n\t`junit4-compatibility`"
+        "startLine": 112,
+        "length": 10,
+        "offset": 53,
+        "surroundingCode": "\n\t\t\tvar result = tool.run(configuration.build());\n\t\t\tSystem.out.println(result.getOutput(\"out\"));\n\t\t\tSystem.err.println(result.getOutput(\"err\"));\n\t\t\treturn result;"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.junit-vintage-engine",
-    "inspectionName": "RedundantSemicolon"
+    "module": "junit5.platform-tooling-support-tests.main",
+    "inspectionName": "SystemOutErr"
   },
-  "hash": "3309131812609009199"
+  "hash": "8a9b18a4efafd13f070cfe4440acbb28f9ed2b930658e523a25f2b5bdac0691a"
 },{
   "tool": "Code Inspection",
   "category": "Code maturity",
   "type": "Use of 'System.out' or 'System.err'",
-  "tags": [
-    "JAVA"
-  ],
   "severity": "High",
-  "comment": "Uses of <code>System.out</code> should probably be replaced with more robust logging",
+  "comment": "Uses of 'System.err' should probably be replaced with more robust logging",
   "detailsInfo": "Reports usages of `System.out` or `System.err`.\n\nSuch statements are often used for temporary debugging and should be either removed from the production code, or replaced by a more robust\nlogging facility.",
   "sources": [
     {
-      "type": "method",
-      "path": "junit-platform-console/src/main/java/org/junit/platform/console/ConsoleLauncher.java",
+      "type": "file",
+      "path": "platform-tooling-support-tests/src/main/java/platform/tooling/support/Request.java",
       "language": "JAVA",
-      "line": 37,
-      "offset": 25,
+      "line": 115,
+      "offset": 4,
       "length": 10,
       "code": {
-        "startLine": 35,
+        "startLine": 113,
         "length": 10,
-        "offset": 69,
-        "surroundingCode": "\n\tpublic static void main(String... args) {\n\t\tint exitCode = execute(System.out, System.err, args).getExitCode();\n\t\tSystem.exit(exitCode);\n\t}"
+        "offset": 100,
+        "surroundingCode": "\t\t\tvar result = tool.run(configuration.build());\n\t\t\tSystem.out.println(result.getOutput(\"out\"));\n\t\t\tSystem.err.println(result.getOutput(\"err\"));\n\t\t\treturn result;\n\t\t}"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.junit-platform-console.main",
+    "module": "junit5.platform-tooling-support-tests.main",
     "inspectionName": "SystemOutErr"
   },
-  "hash": "-2483864343711134851"
+  "hash": "32f39e7e562f9d7d2ba7a932429ae5f933d170e21c39257952d2e71f18173c80"
 },{
   "tool": "Code Inspection",
-  "category": "Code maturity",
-  "type": "Use of 'System.out' or 'System.err'",
-  "tags": [
-    "JAVA"
-  ],
+  "category": "Class",
+  "type": "Class name same as ancestor name",
   "severity": "High",
-  "comment": "Uses of <code>System.err</code> should probably be replaced with more robust logging",
-  "detailsInfo": "Reports usages of `System.out` or `System.err`.\n\nSuch statements are often used for temporary debugging and should be either removed from the production code, or replaced by a more robust\nlogging facility.",
+  "comment": "Class name 'PreconditionViolationException' is the same as one of its superclass' names",
+  "detailsInfo": "Reports classes that have the same name as one of their superclasses, while their fully qualified names remain different. Such class names may be very confusing.\n\n**Example:**\n\n\n      package util;\n      abstract class Iterable<T> implements java.lang.Iterable<T> {}\n\nA quick-fix that renames such classes is available only in the editor.",
   "sources": [
     {
-      "type": "method",
-      "path": "junit-platform-console/src/main/java/org/junit/platform/console/ConsoleLauncher.java",
+      "type": "file",
+      "path": "junit-platform-commons/src/main/java/org/junit/platform/commons/PreconditionViolationException.java",
       "language": "JAVA",
-      "line": 37,
-      "offset": 37,
-      "length": 10,
+      "line": 24,
+      "offset": 14,
+      "length": 30,
       "code": {
-        "startLine": 35,
-        "length": 10,
-        "offset": 81,
-        "surroundingCode": "\n\tpublic static void main(String... args) {\n\t\tint exitCode = execute(System.out, System.err, args).getExitCode();\n\t\tSystem.exit(exitCode);\n\t}"
+        "startLine": 22,
+        "length": 30,
+        "offset": 98,
+        "surroundingCode": "@API(status = STABLE, since = \"1.5\")\n@SuppressWarnings({ \"deprecation\", \"exports\" })\npublic class PreconditionViolationException extends org.junit.platform.commons.util.PreconditionViolationException {\n\n\tprivate static final long serialVersionUID = 1L;"
       }
     }
   ],
   "attributes": {
-    "module": "junit5.junit-platform-console.main",
-    "inspectionName": "SystemOutErr"
+    "module": "junit5.junit-platform-commons.main",
+    "inspectionName": "ClassNameSameAsAncestorName"
   },
-  "hash": "7151884570049400962"
+  "hash": "e1f0f67f785d72d0c33811115f5071935e91df71f107196a0c468b2bc3366a8f"
+},{
+  "tool": "Code Inspection",
+  "category": "Error handling",
+  "type": "'instanceof' on 'catch' parameter",
+  "severity": "High",
+  "comment": "'instanceof' on 'catch' parameter 'ex'",
+  "detailsInfo": "Reports cases in which an `instanceof` expression is used for testing the type of a parameter in a `catch` block.\n\nTesting the type of `catch` parameters is usually better done by having separate\n`catch` blocks instead of using `instanceof`.\n\n**Example:**\n\n\n      void foo(Runnable runnable) {\n        try {\n            runnable.run();\n        } catch (Throwable throwable) {\n            if (throwable instanceof NoClassDefFoundError) { // warning: 'instanceof' on 'catch' parameter 'throwable'\n                System.out.println(\"Class not found!\");\n            }\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-params/src/main/java/org/junit/jupiter/params/ParameterizedTestExtension.java",
+      "language": "JAVA",
+      "line": 101,
+      "offset": 8,
+      "length": 2,
+      "code": {
+        "startLine": 99,
+        "length": 2,
+        "offset": 36,
+        "surroundingCode": "\t\t}\n\t\tcatch (Exception ex) {\n\t\t\tif (ex instanceof NoSuchMethodException) {\n\t\t\t\tString message = String.format(\"Failed to find a no-argument constructor for ArgumentsProvider [%s]. \"\n\t\t\t\t\t\t+ \"Please ensure that a no-argument constructor exists and \""
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-params.main",
+    "inspectionName": "InstanceofCatchParameter"
+  },
+  "hash": "61f0af827133a0ef2651d215ef68c7d5b6cdb2ff41f95be9e0b253d0ced010d6"
+},{
+  "tool": "Code Inspection",
+  "category": "Error handling",
+  "type": "'instanceof' on 'catch' parameter",
+  "severity": "High",
+  "comment": "'instanceof' on 'catch' parameter 'ex'",
+  "detailsInfo": "Reports cases in which an `instanceof` expression is used for testing the type of a parameter in a `catch` block.\n\nTesting the type of `catch` parameters is usually better done by having separate\n`catch` blocks instead of using `instanceof`.\n\n**Example:**\n\n\n      void foo(Runnable runnable) {\n        try {\n            runnable.run();\n        } catch (Throwable throwable) {\n            if (throwable instanceof NoClassDefFoundError) { // warning: 'instanceof' on 'catch' parameter 'throwable'\n                System.out.println(\"Class not found!\");\n            }\n        }\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-jupiter-params/src/main/java/org/junit/jupiter/params/converter/DefaultArgumentConverter.java",
+      "language": "JAVA",
+      "line": 116,
+      "offset": 10,
+      "length": 2,
+      "code": {
+        "startLine": 114,
+        "length": 2,
+        "offset": 42,
+        "surroundingCode": "\t\t\t\t}\n\t\t\t\tcatch (Exception ex) {\n\t\t\t\t\tif (ex instanceof ArgumentConversionException) {\n\t\t\t\t\t\t// simply rethrow it\n\t\t\t\t\t\tthrow (ArgumentConversionException) ex;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-jupiter-params.main",
+    "inspectionName": "InstanceofCatchParameter"
+  },
+  "hash": "be799ca5b27bdde52f264eea5948cb3d1f09ceedea6f1fcead7332e887161b48"
+},{
+  "tool": "Code Inspection",
+  "category": "JUnit",
+  "type": "Test class with no tests",
+  "severity": "High",
+  "comment": "Test class 'JUnit4TestCaseWithExceptionThrowingRunner' has no tests",
+  "detailsInfo": "Reports non-`abstract` test cases without any test methods.\n\nSuch test cases usually indicate unfinished code\nor could be a refactoring leftover that should be removed.\n\nExample:\n\n\n      public class CrucialTest {\n        @Before\n        public void setUp() {\n          System.out.println(\"setting up\");\n        }\n      }\n\nUse the **Ignore test cases which have superclasses with test methods** option to ignore test cases which have super classes\nwith test methods.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "junit-vintage-engine/src/testFixtures/java/org/junit/vintage/engine/samples/junit4/JUnit4TestCaseWithExceptionThrowingRunner.java",
+      "language": "JAVA",
+      "line": 21,
+      "offset": 14,
+      "length": 41,
+      "code": {
+        "startLine": 19,
+        "length": 41,
+        "offset": 68,
+        "surroundingCode": "@RunWith(ExceptionThrowingRunner.class)\n@ChildCount(0)\npublic class JUnit4TestCaseWithExceptionThrowingRunner {\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "junit5.junit-vintage-engine.testFixtures",
+    "inspectionName": "TestCaseWithNoTestMethods"
+  },
+  "hash": "af8140d7bf6a6fc349b78e4f14ee357b001ed7a6fee9712a06d9d279910346aa"
 }]}

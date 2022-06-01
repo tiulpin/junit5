@@ -425,8 +425,8 @@
           "path": "file://$PROJECT_DIR$/documentation/src/test",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/documentation/src/test/resources",
-              "type": "TestResource",
+              "path": "file://$PROJECT_DIR$/documentation/src/test/java",
+              "type": "TestSource",
               "packagePrefix": ""
             },
             {
@@ -435,8 +435,8 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/documentation/src/test/java",
-              "type": "TestSource",
+              "path": "file://$PROJECT_DIR$/documentation/src/test/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             }
           ]
@@ -853,16 +853,6 @@
           "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
               "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/groovy",
               "type": "TestSource",
               "packagePrefix": ""
@@ -870,6 +860,16 @@
             {
               "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/java",
               "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/test/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             }
           ]
@@ -1125,13 +1125,13 @@
           "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/main",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/main/resources",
-              "type": "Resource",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/main/java",
+              "type": "Source",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/main/java",
-              "type": "Source",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-engine/src/main/resources",
+              "type": "Resource",
               "packagePrefix": ""
             }
           ]
@@ -1175,13 +1175,13 @@
           "path": "file://$PROJECT_DIR$/junit-jupiter-migrationsupport/src/test",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-migrationsupport/src/test/resources",
-              "type": "TestResource",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-migrationsupport/src/test/java",
+              "type": "TestSource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-migrationsupport/src/test/java",
-              "type": "TestSource",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-migrationsupport/src/test/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             }
           ]
@@ -1354,12 +1354,12 @@
           "path": "file://$PROJECT_DIR$/junit-jupiter-params/src/test",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-params/src/test/kotlin",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-params/src/test/java",
               "type": "TestSource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/junit-jupiter-params/src/test/java",
+              "path": "file://$PROJECT_DIR$/junit-jupiter-params/src/test/kotlin",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -2867,13 +2867,13 @@
           "path": "file://$PROJECT_DIR$/junit-vintage-engine/src/main",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/junit-vintage-engine/src/main/resources",
-              "type": "Resource",
+              "path": "file://$PROJECT_DIR$/junit-vintage-engine/src/main/java",
+              "type": "Source",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/junit-vintage-engine/src/main/java",
-              "type": "Source",
+              "path": "file://$PROJECT_DIR$/junit-vintage-engine/src/main/resources",
+              "type": "Resource",
               "packagePrefix": ""
             }
           ]
@@ -3531,13 +3531,13 @@
           "path": "file://$PROJECT_DIR$/platform-tooling-support-tests/src/test",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/platform-tooling-support-tests/src/test/resources",
-              "type": "TestResource",
+              "path": "file://$PROJECT_DIR$/platform-tooling-support-tests/src/test/java",
+              "type": "TestSource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/platform-tooling-support-tests/src/test/java",
-              "type": "TestSource",
+              "path": "file://$PROJECT_DIR$/platform-tooling-support-tests/src/test/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             }
           ]
